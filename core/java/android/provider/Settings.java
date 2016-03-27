@@ -5046,7 +5046,17 @@ public final class Settings {
 
         /** @hide */
         private static final Validator HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR =
-              new SettingsValidators.InclusiveIntegerRangeValidator(0, 1200000);
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 1200000);
+
+        /**
+        * Heads up timeout configuration
+        * @hide
+        */
+        public static final String HEADS_UP_TIMEOUT = "heads_up_timeout";
+
+        /** @hide */
+        private static final Validator HEADS_UP_TIMEOUT_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 10000);
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -5122,6 +5132,7 @@ public final class Settings {
             ENABLE_SUGGESTIONS,
             OMNI_SYSTEM_PROXI_CHECK_ENABLED,
             HEADS_UP_NOTIFICATION_SNOOZE,
+            HEADS_UP_TIMEOUT,
         };
 
         /**
@@ -5262,6 +5273,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
             PRIVATE_SETTINGS.add(OMNI_SYSTEM_PROXI_CHECK_ENABLED);
             PRIVATE_SETTINGS.add(HEADS_UP_NOTIFICATION_SNOOZE);
+            PRIVATE_SETTINGS.add(HEADS_UP_TIMEOUT);
         }
 
         /**
@@ -5368,6 +5380,7 @@ public final class Settings {
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
             VALIDATORS.put(OMNI_SYSTEM_PROXI_CHECK_ENABLED, OMNI_SYSTEM_PROXI_CHECK_ENABLED_VALIDATOR);
             VALIDATORS.put(HEADS_UP_NOTIFICATION_SNOOZE,HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR);
+            VALIDATORS.put(HEADS_UP_TIMEOUT,HEADS_UP_TIMEOUT_VALIDATOR);
         }
 
         /**
